@@ -1,0 +1,44 @@
+:root {
+    --columnPaddingNormal: 16px;  
+    --layoutWidth: 1080px;        
+}
+body{
+    margin: 0px;
+    overflow-y: hidden;
+    font-size: 16px;
+}
+.stripe-navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 0 var(--columnPaddingNormal);
+}
+
+.stripe-navbar ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+}
+
+.stripe-navbar li {
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: #0a2540;
+    transition: color 0.2s ease;
+}
+
+.stripe-navbar li:hover {
+    color: #635bff; 
+}
+
+.stripe-navbar .UserLogo {
+    width: 60px;
+    height: 25px;
+    fill: #0a2540;
+}
