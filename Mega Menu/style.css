@@ -166,15 +166,33 @@ body {
 .stripeHeaderLogo {
   padding-right: 40px !important;
 }
+
 /* Dropdown */
 .has-dropdown {
   position: relative;
+  padding-right: 26px !important;
+}
+.has-dropdown::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background-color: rgba(255, 255, 255, 1);
+
+  -webkit-mask: url("./resources/Down\ \ Arrow.svg") no-repeat center;
+  -webkit-mask-size: contain;
+  mask: url("./resources/Down\ \ Arrow.svg") no-repeat center;
+  mask-size: contain;
+
+  transition: transform 0.3s, background-color 0.3s;
 }
 
-.stripe-nav:hover > svg:first-of-type {
-  transform: rotate(180deg);
-  fill: rgba(255, 255, 255, 0.6);
-  transition: transform 0.3s, fill 0.3s;
+.has-dropdown:hover::after {
+  transform: translateY(-50%) rotate(180deg);
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 /* Drop down items */
@@ -217,12 +235,6 @@ body {
   border-right: 8px solid transparent;
   border-bottom: 8px solid rgba(255, 255, 255, 0.95);
 }
-/* .has-dropdown.active .nav-item-contents {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-  transform: translateX(-50%) translateY(0);
-} */
 
 .nav-item-contents-container {
   padding: 5px;
@@ -358,6 +370,18 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.has-content::after {
+  content: "";
+  width: 16px;
+  height: 17px;
+  background-color: #3f4b66;
+  -webkit-mask: url("./resources/Right\ Arrow.svg") no-repeat center;
+  -webkit-mask-size: contain;
+  mask: url("./resources/Right Arrow.svg") no-repeat center;
+  mask-size: contain;
 }
 
 .back-btn {
@@ -406,10 +430,6 @@ body {
 
   .drawer-item-contents {
     padding: 0px;
-    /* flex: 1;
-    overflow-y: auto !important;
-    -webkit-overflow-scrolling: touch; */
-
     flex: 1 1 auto;
     min-height: 0;
     overflow-y: auto;
