@@ -44,4 +44,27 @@ document.addEventListener("DOMContentLoaded", function () {
     backBtn.style.display = "none";
     logo.style.display = "block";
   });
+
+  const dropdowns = document.querySelectorAll(".has-dropdown");
+  let timeout;
+
+  dropdowns.forEach((item) => {
+    item.addEventListener("mouseenter", () => {
+      clearTimeout(timeout);
+
+      dropdowns.forEach((d) => d.classList.remove("active"));
+
+      timeout = setTimeout(() => {
+        item.classList.add("active");
+      }, 150);
+    });
+
+    item.addEventListener("mouseleave", () => {
+      clearTimeout(timeout);
+
+      timeout = setTimeout(() => {
+        item.classList.remove("active");
+      }, 150);
+    });
+  });
 });

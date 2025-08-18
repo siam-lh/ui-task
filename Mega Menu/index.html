@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <section class="navbar">
+    <header class="navbar">
         <nav class="stripe-navbar">
             <!-- Mobile drawer for navigation -->
             <div class="sidebar-drawer">
@@ -507,7 +507,8 @@
             </div>
             <!-- Navigation -->
             <ul>
-                <li> <svg viewBox="0 0 60 25" xmlns="http://www.w3.org/2000/svg" width="60" height="25"
+                <li class="stripeHeaderLogo">
+                    <svg viewBox="0 0 60 25" xmlns="http://www.w3.org/2000/svg" width="60" height="25"
                         class="UserLogo variant-- ">
                         <title>Stripe logo</title>
                         <path fill="var(--userLogoColor, #fff)"
@@ -630,12 +631,13 @@
                                 </ul>
                             </div>
                         </div>
-
                     </div>
                 </li>
 
-                <li class="has-dropdown hideOnMobile stripe-nav">Solutions<svg xmlns="http://www.w3.org/2000/svg"
-                        height="20px" viewBox="0 -960 960 960" width="20px" fill="#FFFFFF">
+                <li class="has-dropdown hideOnMobile stripe-nav">
+                    Solutions
+                    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
+                        fill="#FFFFFF">
                         <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
                     </svg>
                     <div class="nav-item-contents">
@@ -985,7 +987,6 @@
                 </li>
                 <li class="hideOnMobile">Pricing</li>
             </ul>
-
             <ul class="auth-items">
                 <li class="hideOnMobile sign-in-item">
                     <p>Sign in</p>
@@ -1032,7 +1033,7 @@
                 </li>
             </ul>
         </nav>
-    </section>
+    </header>
 
     <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

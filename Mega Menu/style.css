@@ -163,11 +163,12 @@ body {
 .contact-sales-btn-li:hover {
   background: transparent;
 }
-
+.stripeHeaderLogo {
+  padding-right: 40px !important;
+}
 /* Dropdown */
 .has-dropdown {
   position: relative;
-  cursor: pointer;
 }
 
 .stripe-nav:hover > svg:first-of-type {
@@ -176,54 +177,56 @@ body {
   transition: transform 0.3s, fill 0.3s;
 }
 
-/* Mega Menu */
+/* Drop down items */
 
-.nav-item-contents {
+.has-dropdown .nav-item-contents {
   position: absolute;
-  min-width: 600px;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 400px;
   max-width: 600px;
-  top: 98%;
-  left: -70px;
   background-color: rgba(255, 255, 255, 0.95);
   border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 50px 100px rgba(50, 50, 93, 0.1),
+    0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 
-  /* Animation starting state */
   opacity: 0;
   visibility: hidden;
-  transform: translateY(10px);
-  transition: opacity 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    visibility 0s linear 0.25s;
-}
-
-.nav-item-contents-container {
-  padding: 5px;
-  /* height: 40%; */
+  transform-origin: top center;
+  transition: opacity 0.25s, transform 0.25s, visibility 0s linear 0.25s;
 }
 
 .has-dropdown:hover .nav-item-contents {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
+  transform: translateX(-50%) translateY(0);
   transition: opacity 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94),
     transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94),
     visibility 0s linear 0s;
 }
-.nav-item-contents::before {
+
+.has-dropdown .nav-item-contents::before {
   content: "";
   position: absolute;
   top: -8px;
-  left: var(--triangle-left, 100px);
-  width: 0;
-  height: 0;
+  left: 50%;
+  transform: translateX(-50%);
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
   border-bottom: 8px solid rgba(255, 255, 255, 0.95);
-  z-index: 1001;
 }
+/* .has-dropdown.active .nav-item-contents {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+} */
 
+.nav-item-contents-container {
+  padding: 5px;
+}
 .mega-menu {
   color: black;
   text-align: left;
@@ -289,6 +292,7 @@ body {
   align-items: stretch;
   justify-content: flex-start;
   box-sizing: border-box;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .sidebar-drawer.active {
